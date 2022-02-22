@@ -4,7 +4,7 @@ FROM golang as go-build
 # build lachesis from source 
 RUN git clone https://github.com/Fantom-foundation/go-opera.git && \
     cd go-opera && \
-    git checkout release/1.0.1-rc.1 && \
+    git checkout release/1.0.2-rc.5 && \
     make
 
 # get the Galileo IDE
@@ -16,7 +16,6 @@ FROM ubuntu:18.04
 # install geth, python, node, and smart contract development tooling
 RUN apt update -y \
   && apt install -y software-properties-common gpg \
-  && add-apt-repository -y ppa:deadsnakes/ppa \
   && apt update -y \
   && apt install -y \
     supervisor kmod fuse\
@@ -51,7 +50,7 @@ COPY --from=galileo-ide --chown=galileo /caddy/users.json /etc/gatekeeper/users.
 COPY --from=galileo-ide --chown=galileo /caddy/auth.txt /etc/gatekeeper/auth.txt
 COPY --from=galileo-ide --chown=galileo /caddy/settings.template /etc/gatekeeper/assets/settings.template
 COPY --from=galileo-ide --chown=galileo /caddy/login.template /etc/gatekeeper/assets/login.template
-COPY --from=galileo-ide --chown=galileo /caddy/custom.css /etc/gatekeeper/assets/custom.css
+COPY --from=galileo-ide --chown=galileo /caddy/custom.css /etc/assets/custom.css
 COPY --chown=galileo rclone.conf /home/galileo/.config/rclone/rclone.conf
 COPY --chown=galileo Caddyfile /etc/
 

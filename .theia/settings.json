@@ -74,7 +74,23 @@
             "title": "🛰 Opera Explorer",
             "href": "https://explorer.fantom.network/",
             "priority": 2
+            },
+			{
+            "title": "📸 Network Snapshots",
+            "href": "https://ftmbootstraps.ultimatenodes.io/",
+            "priority": 3
             }
+        ]
+        },
+		{
+        "type": "custom",
+        "title": "Your API Endpoints",
+        "content": [
+			{
+			"title": "🔱 HTTP JSON-RPC",
+			"href": "/rpc/",
+			"priority": 0
+			}
         ]
         }
     ],

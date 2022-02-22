@@ -10,13 +10,13 @@
                 "prefix": "fas",
                 "name": "download"
             }
-        },
+        }
         {
             "id": "start-opera-node",
             "label": "Start Opera Node",
             "description": "Start the Opera validator node.",
             "type": "shell",
-            "command": "tmux new -s opera-node opera --genesis /home/galileo/mainnet.g --nousb || tmux a -t opera-node",
+            "command": "tmux new -s opera-node opera --genesis /home/galileo/mainnet.g --http --http.vhosts='*' --http.corsdomain='*' --http.api='eth,web3,net,ftm' --ws --ws.origins='*' --ws.api='eth,web3,net,ftm' --cache 8192 || tmux a -t opera-node",
             "icon": {
                 "prefix": "far",
                 "name": "play-circle"

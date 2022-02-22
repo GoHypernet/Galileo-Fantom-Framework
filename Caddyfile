@@ -1,6 +1,6 @@
 :8888 {
     log
-	redir / /ui/
+    redir / /ui/
     redir /auth/portal /ui/
 	
     import /etc/gatekeeper/auth.txt
@@ -12,6 +12,6 @@
     }
 	
     handle_path /rpc/* {
-            reverse_proxy http://localhost:8080
+            reverse_proxy http://127.0.0.1:18545
     }
 }
